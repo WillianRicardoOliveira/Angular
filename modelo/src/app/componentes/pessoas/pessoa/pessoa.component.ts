@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pessoa } from '../pessoa';
+import { PessoaService } from '../pessoa.service';
 
 @Component({
   selector: 'app-pessoa',
@@ -12,10 +13,20 @@ export class PessoaComponent implements OnInit {
     id: 0,
     conteudo: '',
     autoria: '',
-    modelo: ''
+    modelo: '',
+    favorito: false
   }
 
-  constructor() { }
+
+
+
+
+  @Input() listaFavoritos: Pessoa[] = []
+
+
+
+
+  constructor(private service: PessoaService) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +39,35 @@ export class PessoaComponent implements OnInit {
     } else {
       return 'pensamento-p';
     }
+
+  }
+
+
+  mudariconeFavorito(): string {
+
+    if(this.pessoa.favorito == false){
+
+      return "inativo"
+
+    } else {
+
+      return "ativo"
+    }
+
+
+  }
+
+  atualizarFavoritor(){
+
+    this.service.mudarFavorito(this.pessoa).subscribe(() => {
+
+      this.listaFavoritos.splice(this.listaFavoritos.indexOf(this.pessoa), 1)
+
+    })
+
+
+   
+
 
   }
 

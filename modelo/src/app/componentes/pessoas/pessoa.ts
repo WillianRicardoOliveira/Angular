@@ -3,4 +3,5 @@ export interface Pessoa {
     conteudo: string,
     autoria: string,
     modelo: string
+    favorito: boolean
 }

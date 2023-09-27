@@ -7,6 +7,14 @@
 
 
     <div class="acoes">
+
+        <button class="botao-favorito" (click)="atualizarFavoritor()">
+
+<img src="/assets/imagens/icone-favorito-{{ mudariconeFavorito() }}.png"
+ alt="Ícone favorito {{ mudariconeFavorito() }}">
+
+        </button>
+
         <button class="botao-editar" routerLink="/pessoas/editarPessoa/{{pessoa.id}}">
             <img src="../../../../assets/imagens/icone-editar.png" alt="Ícone de editar">
         </button>

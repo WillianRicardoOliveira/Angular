@@ -7,12 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CriarPessoaComponent } from './componentes/pessoas/criar-pessoa/criar-pessoa.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarPessoaComponent } from './componentes/pessoas/listar-pessoa/listar-pessoa.component';
 import { PessoaComponent } from './componentes/pessoas/pessoa/pessoa.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPessoaComponent } from './componentes/pessoas/excluir-pessoa/excluir-pessoa.component';
 import { EditarPessoaComponent } from './componentes/pessoas/editar-pessoa/editar-pessoa.component';
+import { BotaoCarregarMaisComponent } from './componentes/pessoas/listar-pessoa/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditarPessoaComponent } from './componentes/pessoas/editar-pessoa/edita
     ListarPessoaComponent,
     PessoaComponent,
     ExcluirPessoaComponent,
-    EditarPessoaComponent
+    EditarPessoaComponent,
+    BotaoCarregarMaisComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,11 @@ import { EditarPessoaComponent } from './componentes/pessoas/editar-pessoa/edita
     // Configuração para execução bidirecional
     FormsModule,
     // Configuração para usar o Http
-    HttpClientModule
+    HttpClientModule,
+
+    // Configuração para realizar válidaçoes nos formulários
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

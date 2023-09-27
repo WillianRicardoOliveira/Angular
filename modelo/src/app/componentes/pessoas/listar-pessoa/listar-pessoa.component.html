@@ -1,7 +1,36 @@
 <section class="container">
     <header class="header d-flex">
-        <h2 class="ff-inter">Meu Mural</h2>
-        <button routerLink="/criarPessoa" class="botao">Adicionar pensamento</button>
+
+
+        <div class="buscar-pensamentos">
+
+            <input type="text" class="filtro"
+            
+            placeholder="O que você procura ?"
+
+            outofous
+
+            [(ngModel)]="filtro"
+
+            (keyup)="pesquisarPessoas()"
+
+            >
+
+            <img src="/assets/imangens/lupa.png" alt="Lupa azul">
+
+
+        </div>
+
+        <h2 class="ff-inter">{{ titulo }}</h2>
+
+        <div class="botoes">
+
+            <button class="botao" (click)="recarregarComponente()">Meu mural</button>
+            <button class="botao" (click)="listarFavoritos()">Meus favoritos</button>
+            <button routerLink="/criarPessoa" class="botao">Novo pensamento</button>
+        </div>
+
+        
     </header>
 
 
@@ -9,17 +38,27 @@
 <div class="mural" *ngIf="listaPessoas.length > 0, else semPessoas">
 
     <div *ngFor="let pessoa of listaPessoas">
-        <app-pessoa [pessoa]="pessoa"></app-pessoa>
+        <app-pessoa 
+        
+        [pessoa]="pessoa"
+        
+        [listaFavoritos]="listaFavoritos"
+        
+        ></app-pessoa>
     </div>
 
     
 </div>
 
-
-
-
-
 </section>
+
+
+<app-botao-carregar-mais
+    [haMaisPessoas]="haMaisPessoas"
+    (click)="carregraMaisPessoas()"
+    >
+
+</app-botao-carregar-mais>
 
 
 <ng-template #semPessoas>
