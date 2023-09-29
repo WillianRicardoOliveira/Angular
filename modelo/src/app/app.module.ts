@@ -14,6 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPessoaComponent } from './componentes/pessoas/excluir-pessoa/excluir-pessoa.component';
 import { EditarPessoaComponent } from './componentes/pessoas/editar-pessoa/editar-pessoa.component';
 import { BotaoCarregarMaisComponent } from './componentes/pessoas/listar-pessoa/botao-carregar-mais/botao-carregar-mais.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { SucessoCadastroComponent } from './componentes/sucesso-cadastro/sucesso-cadastro.component';
+import { MensagemComponent } from './componentes/mensagem/mensagem.component';
+import { MaiorIdadeDirective } from './diretivas/maior-idade.directive';
+import { ValidandoCepDirective } from './diretivas/validando-cep/validando-cep.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { BotaoCarregarMaisComponent } from './componentes/pessoas/listar-pessoa/
     PessoaComponent,
     ExcluirPessoaComponent,
     EditarPessoaComponent,
-    BotaoCarregarMaisComponent
+    BotaoCarregarMaisComponent,
+    UsuarioComponent,
+    SucessoCadastroComponent,
+    MensagemComponent,
+    MaiorIdadeDirective,
+    ValidandoCepDirective
   ],
   imports: [
     BrowserModule,
@@ -34,6 +44,9 @@ import { BotaoCarregarMaisComponent } from './componentes/pessoas/listar-pessoa/
 
     // Configuração para execução bidirecional
     FormsModule,
+
+
+
     // Configuração para usar o Http
     HttpClientModule,
 

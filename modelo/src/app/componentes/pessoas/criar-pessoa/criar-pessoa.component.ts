@@ -43,12 +43,16 @@ export class CriarPessoaComponent implements OnInit {
 
     this.formulario = this.formBuilder.group({
 
+      // expressão para o e-mail : ^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$
+
+      // // expressão para o telefone : (\(?\d{2}\)?\s?)(\d{5}\-?\d{4})
+
       conteudo: ['', Validators.compose(
           [
             Validators.required,
             Validators.pattern(/(.|\s)*\S(.|\s)*/) // Não permite que seja colocado apenas espaços
-          
-          
+
+
           ])],
       autoria: ['', Validators.compose([
         Validators.required,
