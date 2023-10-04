@@ -1,0 +1,64 @@
+<!--
+
+  Property Binding:
+
+  Event Binding:
+
+-->
+
+
+
+<!-- Main content -->
+<section class="content">
+  <!-- Default box -->
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-sm-1">
+            <button
+              type="button"
+              [ngClass]="botao()"
+              [routerLink]="params.routerLink">Novo</button>
+          </div>
+          <div class="col-sm-7">
+            <h3 class="card-title"></h3>
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="buscar"
+              placeholder="O que você procura ?">
+          </div>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="width: 10px">#</th>
+              <th>Nome</th>
+              <th style="width: 40px">Ações</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="lista.length > 0, else semRegistros">
+            <tr *ngFor="let l of lista">
+              <td>{{ l.id }}.</td>
+              <td>{{ l.nome }}</td>
+              <td><span class="badge bg-danger">55%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- /.card -->
+</section>
+<!-- /.content -->
+
+<ng-template #semRegistros>
+  <tbody>
+    <tr><td colspan="3" align="center">Ainda não há registros cadastrados!</td></tr>
+  </tbody>
+</ng-template>

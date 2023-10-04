@@ -34,6 +34,11 @@ import {authReducer} from './store/auth/reducer';
 import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
+import { GridComponent } from './components/grid/grid.component';
+
+import { CriarUsuarioComponent } from './pages/usuario/criar-usuario/criar-usuario.component';
+import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
+import { EditarUsuarioComponent } from './pages/usuario/editar-usuario/editar-usuario.component';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -59,7 +64,14 @@ registerLocaleData(localeEn, 'en-EN');
         SubMenuComponent,
         MenuItemComponent,
         ControlSidebarComponent,
-        SidebarSearchComponent
+        SidebarSearchComponent,
+
+
+        GridComponent,
+
+        CriarUsuarioComponent,
+        ListarUsuarioComponent,
+        EditarUsuarioComponent
     ],
     imports: [
         ProfabricComponentsModule,
@@ -75,6 +87,11 @@ registerLocaleData(localeEn, 'en-EN');
             positionClass: 'toast-top-right',
             preventDuplicates: true
         })
+
+
+
+        //
+
     ],
     providers: [],
     bootstrap: [AppComponent]
