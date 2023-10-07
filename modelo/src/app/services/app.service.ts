@@ -13,9 +13,12 @@ export class AppService {
 
     async loginByAuth({email, password}) {
         try {
-            const token = await Gatekeeper.loginByAuth(email, password);
+            const token = "token_123456"//await Gatekeeper.loginByAuth(email, password);
+
+          console.log("TOKEN : ", token)
+
             localStorage.setItem('token', token);
-            await this.getProfile();
+          //  await this.getProfile();
             this.router.navigate(['/']);
             this.toastr.success('Login success');
         } catch (error) {
@@ -85,7 +88,7 @@ export class AppService {
 
     async getProfile() {
         try {
-            this.user = await Gatekeeper.getProfile();
+          this.user = 'WillianOliveira'//await Gatekeeper.getProfile();
         } catch (error) {
             this.logout();
             throw error;
