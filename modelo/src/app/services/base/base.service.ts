@@ -27,4 +27,19 @@ export class BaseService {
 
   }
 
+  excluir(id: number): Observable<any> {
+
+    const url = `${this.api}/${id}`
+
+    return this.http.delete<any>(url)
+
+  }
+
+  buscarPorId(id: number): Observable<any> {
+
+    const url = `${this.api}/${id}`
+
+    return this.http.get<any>(url)
+  }
+
 }

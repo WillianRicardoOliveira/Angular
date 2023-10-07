@@ -14,6 +14,7 @@ import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
 import { CriarUsuarioComponent } from '@pages/usuario/criar-usuario/criar-usuario.component';
 import { ListarUsuarioComponent } from '@pages/usuario/listar-usuario/listar-usuario.component';
+import { ExcluirComponent } from '@components/excluir/excluir.component';
 
 const routes: Routes = [
     {
@@ -52,9 +53,12 @@ const routes: Routes = [
     },
 
 
-
-
-
+/*
+    {
+      path: "excluir/:id",
+      component: ExcluirComponent
+    },
+*/
 
 
     {

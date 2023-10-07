@@ -15,7 +15,7 @@ usuario: Usuario = {
   nome: "Novo usuario"
 }
 
-params={routerLink:""}
+params={routerLink:"", api:""}
 
 constructor(private service: BaseService,
 
