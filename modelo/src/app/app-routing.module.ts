@@ -39,11 +39,24 @@ const routes: Routes = [
                 component: ListarUsuarioComponent
             },
             {
+              path: 'criar-usuario',
+              component: CriarUsuarioComponent
+            },
+
+
+            {
                 path: '',
                 component: DashboardComponent
             }
         ]
     },
+
+
+
+
+
+
+
     {
         path: 'login',
         component: LoginComponent,

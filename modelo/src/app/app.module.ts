@@ -34,11 +34,15 @@ import {authReducer} from './store/auth/reducer';
 import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
+
 import { GridComponent } from './components/grid/grid.component';
+import { ExcluirComponent } from './components/excluir/excluir.component';
 
 import { CriarUsuarioComponent } from './pages/usuario/criar-usuario/criar-usuario.component';
 import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
 import { EditarUsuarioComponent } from './pages/usuario/editar-usuario/editar-usuario.component';
+
+
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -71,7 +75,9 @@ registerLocaleData(localeEn, 'en-EN');
 
         CriarUsuarioComponent,
         ListarUsuarioComponent,
-        EditarUsuarioComponent
+        EditarUsuarioComponent,
+        ExcluirComponent,
+
     ],
     imports: [
         ProfabricComponentsModule,
@@ -86,11 +92,12 @@ registerLocaleData(localeEn, 'en-EN');
             timeOut: 3000,
             positionClass: 'toast-top-right',
             preventDuplicates: true
-        })
+        }),
 
 
 
-        //
+        // WillianOliveira
+        HttpClientModule
 
     ],
     providers: [],

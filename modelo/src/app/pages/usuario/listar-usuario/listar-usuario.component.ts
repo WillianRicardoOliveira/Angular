@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../usuario';
+import { BaseService } from '@services/base/base.service';
 
 @Component({
   selector: 'app-listar-usuario',
@@ -10,10 +11,17 @@ export class ListarUsuarioComponent implements OnInit {
 
   lista: Usuario[] = []
 
-  params={routerLink:""}
+  params={routerLink:"/criar-usuario"}
 
-  constructor() {}
+  constructor(private service: BaseService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+
+    this.service.listar().subscribe((lista) => {
+      this.lista = lista
+    })
+
+  }
 
 }
