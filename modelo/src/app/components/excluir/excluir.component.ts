@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { BaseService } from '@services/base/base.service';
 import { Observable } from 'rxjs';
 
@@ -10,9 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class ExcluirComponent implements OnInit {
 
-  @Input() ids: number
+  @Input() id: number
 
-  dados: any = {}
 
 
   //@Input() params: any;
@@ -21,36 +20,23 @@ export class ExcluirComponent implements OnInit {
 
     private service: BaseService,
 
-    private router: Router,
-
-    private route: ActivatedRoute
+    private router: Router
 
     ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {  }
 
-     const id = this.route.snapshot.paramMap.get("id")
-     console.log("Remover :: Init ", id)
+   excluir() {
 
-     this.service.buscarPorId(this.ids).subscribe((dados)=>{
-
-      this.dados = dados
-
-     })
-
-   }
-
-   excluir(teste: number) {
-
-    console.log("Remover :: ", teste)
+    console.log("Remover :: ", this.id)
     //console.log("Remover :: " ,id)
-/*
-    if(this.registro.id) {
-      this.service.excluir(this.registro.id).subscribe(() =>{
-        this.router.navigate(["/listar-usuario"])
+
+    if(this.id) {
+      this.service.excluir(this.id).subscribe(() =>{
+        this.router.navigate(["/lista-usuario"])
       })
     }
-*/
+
    }
 
 }
