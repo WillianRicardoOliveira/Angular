@@ -9,9 +9,9 @@ import { BaseService } from '@services/base/base.service';
 })
 export class ExcluirComponent implements OnInit {
 
-  @Input() id: number
+  @Input() dado: any
 
-  //@Input() params: any;
+  @Input() param: any
 
   constructor(
 
@@ -19,25 +19,23 @@ export class ExcluirComponent implements OnInit {
 
     private router: Router
 
-    ) {}
+  ) {}
 
   ngOnInit(): void {}
 
   excluir() {
 
-    if(this.id) {
+    if(this.dado.id) {
 
-      this.service.excluir(this.id).subscribe(() => {
+      this.service.excluir(this.dado.id).subscribe(() => {
 
-        let modal = document.querySelector('#modal-sm-'+ this.id) as HTMLLIElement
+        let modal = document.querySelector('#modal-sm-'+ this.dado.id) as HTMLLIElement
 
-        modal.hidden = true
+        modal.remove()
 
         let backdrop = document.querySelector('.modal-backdrop') as HTMLLIElement
 
-        backdrop.hidden = true
-
-
+        backdrop.remove()
 
         this.recarregarComponente()
 

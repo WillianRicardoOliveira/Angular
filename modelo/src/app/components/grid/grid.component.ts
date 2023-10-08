@@ -9,15 +9,10 @@ export class GridComponent implements OnInit {
 
   @Input() lista: any;
 
-  @Input() params: any;
+  @Input() param: any;
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  botao(): string {
-    return "btn btn-block bg-gradient-primary";
-
-  }
 
 }
