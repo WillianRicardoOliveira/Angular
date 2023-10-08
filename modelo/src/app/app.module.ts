@@ -97,7 +97,8 @@ registerLocaleData(localeEn, 'en-EN');
 
 
         // WillianOliveira
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
 
     ],
     providers: [],

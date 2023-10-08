@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../usuario';
 import { BaseService } from '@services/base/base.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-criar-usuario',
@@ -10,29 +13,58 @@ import { Router } from '@angular/router';
 })
 export class CriarUsuarioComponent implements OnInit {
 
-usuario: Usuario = {
-
-  nome: "Novo usuario"
-}
+formulario!: FormGroup
 
 params={routerLink:"", api:""}
 
-constructor(private service: BaseService,
+constructor(
 
-  private router: Router
+  private service: BaseService,
 
-  ) {}
+  private router: Router,
 
-ngOnInit(): void {}
+  private formBuilder: FormBuilder,
+
+  private toastr: ToastrService
+
+) {}
+
+ngOnInit(): void {
+
+  this.formulario = this.formBuilder.group({
+
+    nome: ['', Validators.compose([
+
+      Validators.required,
+
+      Validators.pattern(/(.|\s)*\S(.|\s)*/),
+
+      Validators.minLength(3)
+
+    ])]
+
+  })
+
+}
 
 
 criar() {
 
-  this.service.criar(this.usuario).subscribe(() => {
+  console.log(this.formulario.status)
 
-    this.router.navigate(["/listar-usuario"])
+  console.log(this.formulario.get("nome")?.errors)
 
-  })
+  if(this.formulario.valid) {
+
+    this.service.criar(this.formulario.value).subscribe(() => {
+
+      this.router.navigate(["/lista-usuario"])
+
+      this.toastr.success('Salvo com successo');
+
+    })
+
+  }
 
 }
 

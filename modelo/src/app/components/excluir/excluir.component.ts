@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BaseService } from '@services/base/base.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-excluir',
@@ -17,7 +18,9 @@ export class ExcluirComponent implements OnInit {
 
     private service: BaseService,
 
-    private router: Router
+    private router: Router,
+
+    private toastr: ToastrService
 
   ) {}
 
@@ -38,6 +41,8 @@ export class ExcluirComponent implements OnInit {
         backdrop.remove()
 
         this.recarregarComponente()
+
+        this.toastr.success('Excluido com successo');
 
       })
 
