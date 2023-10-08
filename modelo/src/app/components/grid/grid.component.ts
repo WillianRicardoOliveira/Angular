@@ -17,6 +17,7 @@ export class GridComponent implements OnInit {
 
   botao(): string {
     return "btn btn-block bg-gradient-primary";
+
   }
 
 }

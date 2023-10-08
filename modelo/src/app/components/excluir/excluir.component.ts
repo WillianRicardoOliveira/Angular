@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BaseService } from '@services/base/base.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-excluir',
@@ -11,8 +10,6 @@ import { Observable } from 'rxjs';
 export class ExcluirComponent implements OnInit {
 
   @Input() id: number
-
-
 
   //@Input() params: any;
 
@@ -24,19 +21,40 @@ export class ExcluirComponent implements OnInit {
 
     ) {}
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {}
 
-   excluir() {
-
-    console.log("Remover :: ", this.id)
-    //console.log("Remover :: " ,id)
+  excluir() {
 
     if(this.id) {
-      this.service.excluir(this.id).subscribe(() =>{
-        this.router.navigate(["/lista-usuario"])
+
+      this.service.excluir(this.id).subscribe(() => {
+
+        let modal = document.querySelector('#modal-sm-'+ this.id) as HTMLLIElement
+
+        modal.hidden = true
+
+        let backdrop = document.querySelector('.modal-backdrop') as HTMLLIElement
+
+        backdrop.hidden = true
+
+
+
+        this.recarregarComponente()
+
       })
+
     }
 
-   }
+  }
+
+  recarregarComponente() {
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false
+
+    this.router.onSameUrlNavigation = "reload"
+
+    this.router.navigate([this.router.url])
+
+  }
 
 }

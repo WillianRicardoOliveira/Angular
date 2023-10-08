@@ -11,7 +11,11 @@ export class ListarUsuarioComponent implements OnInit {
 
   lista: Usuario[] = []
 
-  params={routerLink:"/criar-usuario"}
+  params = {
+    routerLink: "/criar-usuario"
+
+
+  }
 
   constructor(private service: BaseService) {}
 
