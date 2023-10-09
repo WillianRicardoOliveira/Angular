@@ -1,1 +1,9 @@
-<p>formulario-validacao works!</p>
+<div *ngIf="formulario.get('nome')?.errors?.['required'] && formulario.get('nome')?.touched">
+  Validacao 1
+</div>
+
+
+
+<div *ngIf="formulario.get('nome')?.errors?.['minlength'] && formulario.get('nome')?.touched">
+  Validacao 2
+</div>
