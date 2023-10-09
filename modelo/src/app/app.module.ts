@@ -41,6 +41,7 @@ import { ExcluirComponent } from './components/excluir/excluir.component';
 import { CriarUsuarioComponent } from './pages/usuario/criar-usuario/criar-usuario.component';
 import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
 import { EditarUsuarioComponent } from './pages/usuario/editar-usuario/editar-usuario.component';
+import { FormularioValidacaoComponent } from './components/formulario-validacao/formulario-validacao.component';
 
 
 
@@ -77,6 +78,7 @@ registerLocaleData(localeEn, 'en-EN');
         ListarUsuarioComponent,
         EditarUsuarioComponent,
         ExcluirComponent,
+        FormularioValidacaoComponent,
 
     ],
     imports: [
