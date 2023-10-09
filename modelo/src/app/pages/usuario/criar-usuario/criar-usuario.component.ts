@@ -4,7 +4,7 @@ import { BaseService } from '@services/base/base.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import {ToastrService} from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-criar-usuario',
@@ -47,7 +47,6 @@ ngOnInit(): void {
 
 }
 
-
 criar() {
 
   console.log(this.formulario.status)
@@ -70,7 +69,7 @@ criar() {
 
 cancelar() {
 
-  this.router.navigate(["/listar-usuario"])
+  this.router.navigate(["/lista-usuario"])
 
 }
 

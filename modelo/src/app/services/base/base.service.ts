@@ -27,6 +27,14 @@ export class BaseService {
 
   }
 
+  editar(dados: any): Observable<any> {
+
+    const url = `${this.api}/${dados.id}`
+
+    return this.http.put<any>(url, dados)
+
+  }
+
   excluir(id: number): Observable<any> {
 
     const url = `${this.api}/${id}`
@@ -40,6 +48,7 @@ export class BaseService {
     const url = `${this.api}/${id}`
 
     return this.http.get<any>(url)
+
   }
 
 }

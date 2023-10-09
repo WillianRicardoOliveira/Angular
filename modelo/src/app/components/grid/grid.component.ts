@@ -7,9 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GridComponent implements OnInit {
 
-  @Input() lista: any;
+  @Input() lista: any
 
-  @Input() param: any;
+  @Input() param: any
 
   constructor() {}
 

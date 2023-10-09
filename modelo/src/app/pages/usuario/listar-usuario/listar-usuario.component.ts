@@ -12,8 +12,9 @@ export class ListarUsuarioComponent implements OnInit {
   lista: Usuario[] = []
 
   param = {
-    routerLink: "/criar-usuario"
+    routerLink: "/criar-usuario",
 
+    rotaEditar: "/editar-usuario"
 
   }
 

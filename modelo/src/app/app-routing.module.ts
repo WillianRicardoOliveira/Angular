@@ -15,6 +15,7 @@ import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
 import { CriarUsuarioComponent } from '@pages/usuario/criar-usuario/criar-usuario.component';
 import { ListarUsuarioComponent } from '@pages/usuario/listar-usuario/listar-usuario.component';
 import { ExcluirComponent } from '@components/excluir/excluir.component';
+import { EditarUsuarioComponent } from '@pages/usuario/editar-usuario/editar-usuario.component';
 
 const routes: Routes = [
     {
@@ -42,6 +43,10 @@ const routes: Routes = [
             {
               path: 'criar-usuario',
               component: CriarUsuarioComponent
+            },
+            {
+              path: 'editar-usuario/:id',
+              component: EditarUsuarioComponent
             },
 
 

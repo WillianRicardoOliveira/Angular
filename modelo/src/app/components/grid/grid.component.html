@@ -67,7 +67,14 @@
 
                 <app-excluir [dado]="dado" [param]="param"></app-excluir>
 
+                <button
+                type="button"
+                class = "btn btn-block bg-gradient-primary"
+                routerLink="{{ param.rotaEditar }}/{{ dado.id }}">Editar</button>
+
               </td>
+
+
 
             </tr>
 
