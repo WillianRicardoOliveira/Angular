@@ -14,7 +14,10 @@ export class ListarUsuarioComponent implements OnInit {
   param = {
     routerLink: "/criar-usuario",
 
-    rotaEditar: "/editar-usuario"
+    rotaEditar: "/editar-usuario",
+
+    titulo: "Lista de usuários",
+    pagina: "Usuários"
 
   }
 

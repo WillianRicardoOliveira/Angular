@@ -1,3 +1,10 @@
+
+<app-cabecalho-pagina
+
+[param]="param"
+
+></app-cabecalho-pagina>
+
 <section class="content">
 
   <div class="container-fluid">
@@ -48,7 +55,9 @@
 
               <th>Nome</th>
 
-              <th style="width: 40px">Ações</th>
+              <th style="width: 40px"></th>
+
+              <th style="width: 40px"></th>
 
             </tr>
 
@@ -66,14 +75,13 @@
 
                 <app-excluir [dado]="dado" [param]="param"></app-excluir>
 
-                <button
-                type="button"
-                class = "btn btn-block bg-gradient-primary"
-                routerLink="{{ param.rotaEditar }}/{{ dado.id }}">Editar</button>
-
               </td>
 
+              <td>
 
+                <a href="#" routerLink="{{ param.rotaEditar }}/{{ dado.id }}">Editar</a>
+
+              </td>
 
             </tr>
 

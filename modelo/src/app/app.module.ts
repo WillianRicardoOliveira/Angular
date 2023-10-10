@@ -43,6 +43,11 @@ import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-us
 import { EditarUsuarioComponent } from './pages/usuario/editar-usuario/editar-usuario.component';
 import { FormularioValidacaoComponent } from './components/formulario-validacao/formulario-validacao.component';
 import { EditarComponent } from './components/editar/editar.component';
+import { CabecalhoPaginaComponent } from './components/cabecalho-pagina/cabecalho-pagina.component';
+import { InformacaoComponent } from './components/dashboard/informacao/informacao.component';
+import { SucessoComponent } from './components/dashboard/sucesso/sucesso.component';
+import { AvisoComponent } from './components/dashboard/aviso/aviso.component';
+import { PerigoComponent } from './components/dashboard/perigo/perigo.component';
 
 
 
@@ -81,6 +86,11 @@ registerLocaleData(localeEn, 'en-EN');
         ExcluirComponent,
         FormularioValidacaoComponent,
         EditarComponent,
+        CabecalhoPaginaComponent,
+        InformacaoComponent,
+        SucessoComponent,
+        AvisoComponent,
+        PerigoComponent,
 
     ],
     imports: [
