@@ -51,7 +51,7 @@
 
             <tr>
 
-              <th style="width: 10px">#</th>
+              <th style="width: 10px"></th>
 
               <th>Nome</th>
 
@@ -65,7 +65,13 @@
 
           <tbody *ngIf="lista.length > 0, else semRegistros">
 
-            <tr *ngFor="let dado of lista">
+            <tr *ngFor="let dado of lista;
+
+            let i = index"
+            (mouseover)="indexTarefa = i"
+            [@trigger-destaque]="indexTarefa === i ? 'fim' : 'inicio'"
+
+            >
 
               <td>{{ dado.id }}.</td>
 
