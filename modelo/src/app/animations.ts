@@ -3,10 +3,10 @@ import { transition, state, style, trigger, animate } from '@angular/animations'
 export const triggerDestaque = trigger('trigger-destaque', [
 
   state('inicio', style({
-    border: '2px solid #B2B6FF'
+ //   border: '2px solid #B2B6FF'
   })),
   state('fim', style({
-    border: '4px solid #B2B6FF',
+    //border: '4px solid #B2B6FF',
     filter: 'brightness(92%)',
     backgroundColor: '#caeff9'
   })),
