@@ -55,6 +55,7 @@ export const MENU = [
                 name: 'Usuários',
                 iconClasses: 'fas fa-file',
                 path: ['/lista-usuario']
+
             },
             {
                 name: 'Fornecedor',
@@ -65,6 +66,7 @@ export const MENU = [
                 name: 'Produto',
                 iconClasses: 'fas fa-file',
                 path: ['/listar-produto']
+
             }
         ]
     }

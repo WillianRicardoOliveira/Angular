@@ -1,6 +1,7 @@
 
 <app-cabecalho-pagina
 
+
 [param]="parametros"
 
 ></app-cabecalho-pagina>
@@ -20,6 +21,7 @@
             <button
               type="button"
               class = "btn btn-block bg-gradient-primary"
+
               [routerLink]="parametros.rota_criar">Novo</button>
 
           </div>
@@ -81,11 +83,13 @@
 
                 <app-excluir [dado]="dado" [param]="parametros"></app-excluir>
 
+
               </td>
 
               <td>
 
                 <a href="#" routerLink="{{ parametros.rota_editar }}/{{ dado.id }}">Editar</a>
+
 
               </td>
 

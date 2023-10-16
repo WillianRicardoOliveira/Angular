@@ -11,10 +11,6 @@ export class BaseService {
 
   constructor(private http: HttpClient) { }
 
-  /**
-   *
-   * @returns
-   */
   listar(gateway: string): Observable<any[]> {
 
     const url = `${this.api}${gateway}`
@@ -46,6 +42,7 @@ export class BaseService {
     return this.http.delete<any>(url)
 
   }
+
 
   buscarPorId(gateway: string, id: number): Observable<any> {
 

@@ -16,12 +16,14 @@ import { CriarUsuarioComponent } from '@pages/usuario/criar-usuario/criar-usuari
 import { ListarUsuarioComponent } from '@pages/usuario/listar-usuario/listar-usuario.component';
 import { ExcluirComponent } from '@components/excluir/excluir.component';
 import { EditarUsuarioComponent } from '@pages/usuario/editar-usuario/editar-usuario.component';
+
 import { ListarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/listar-fornecedor/listar-fornecedor.component';
 import { CriarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/criar-fornecedor/criar-fornecedor.component';
 import { EditarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/editar-fornecedor/editar-fornecedor.component';
 import { EditarProdutoComponent } from '@pages/estoque/cadastro/produto/editar-produto/editar-produto.component';
 import { CriarProdutoComponent } from '@pages/estoque/cadastro/produto/criar-produto/criar-produto.component';
 import { ListarProdutoComponent } from '@pages/estoque/cadastro/produto/listar-produto/listar-produto.component';
+
 
 const routes: Routes = [
     {
@@ -54,6 +56,7 @@ const routes: Routes = [
               path: 'editar-usuario/:id',
               component: EditarUsuarioComponent
             },
+
 
             /* MODULO ESTOQUE */
             { path: 'listar-fornecedor', component: ListarFornecedorComponent },

@@ -13,6 +13,7 @@ export class DashboardComponent {
     rota: "/lista-usuario"
   }
 
+
   param = {
 
     titulo: "Dashboard",

@@ -18,6 +18,7 @@ export class EditarUsuarioComponent implements OnInit {
   gateway: "usuario"
 }
 
+
   constructor(
 
     private service: BaseService,
@@ -39,6 +40,7 @@ export class EditarUsuarioComponent implements OnInit {
     console.log("ID :: ",  id)
 
     this.service.buscarPorId(this.param.gateway, parseInt(id!)).subscribe((dados) => {
+
 
       this.formulario = this.formBuilder.group({
 
@@ -67,7 +69,8 @@ export class EditarUsuarioComponent implements OnInit {
 
     if(this.formulario.valid) {
 
-      this.service.editar(this.formulario.value,this.param.gateway).subscribe(() => {
+      this.service.editar(this.param.gateway, this.formulario.value).subscribe(() => {
+
 
         this.router.navigate(["/lista-usuario"])
 

@@ -53,6 +53,10 @@
     {
       "id": 2,
       "nome": "Produto 2"
+    },
+    {
+      "id": 3,
+      "nome": "Produto 3"
     }
   ],
   "fornecedor": [
@@ -63,6 +67,10 @@
     {
       "id": 2,
       "nome": "Fornecedor 02"
+    },
+    {
+      "id": 3,
+      "nome": "Fornecedor 03"
     }
   ]
 }

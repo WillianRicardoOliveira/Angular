@@ -1,4 +1,6 @@
+
 import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-aviso',
@@ -7,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AvisoComponent {
 
-  @Input() dados
+
+  @Input() dados: any
 
 }

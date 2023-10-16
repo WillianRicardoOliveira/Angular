@@ -11,12 +11,15 @@ export class ListarUsuarioComponent implements OnInit {
 
   lista: Usuario[] = []
 
+
   parametros = {
+
     routerLink: "/criar-usuario",
 
     rotaEditar: "/editar-usuario",
 
     titulo: "Lista de usuários",
+
     pagina: "Usuários",
 
     gateway: "usuario"
@@ -26,12 +29,9 @@ export class ListarUsuarioComponent implements OnInit {
   constructor(private service: BaseService) {}
 
   ngOnInit(): void {
-
-
     this.service.listar(this.parametros.gateway).subscribe((lista) => {
       this.lista = lista
     })
-
   }
 
 }

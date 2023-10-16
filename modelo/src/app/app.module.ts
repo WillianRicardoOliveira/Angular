@@ -50,6 +50,7 @@ import { AvisoComponent } from './components/dashboard/aviso/aviso.component';
 import { PerigoComponent } from './components/dashboard/perigo/perigo.component';
 
 
+
 /* MODULO DE ETOQUE */
 import { CriarProdutoComponent } from './pages/estoque/cadastro/produto/criar-produto/criar-produto.component';
 import { EditarProdutoComponent } from './pages/estoque/cadastro/produto/editar-produto/editar-produto.component';
@@ -100,6 +101,7 @@ registerLocaleData(localeEn, 'en-EN');
         SucessoComponent,
         AvisoComponent,
         PerigoComponent,
+
        
         /* MODULO DE ETOQUE */
         CriarProdutoComponent,
@@ -108,6 +110,7 @@ registerLocaleData(localeEn, 'en-EN');
         CriarFornecedorComponent,
         EditarFornecedorComponent,
         ListarFornecedorComponent,
+
 
     ],
     imports: [

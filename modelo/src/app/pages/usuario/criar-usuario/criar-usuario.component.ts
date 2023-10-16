@@ -23,6 +23,7 @@ gateway: "usuario"
 }
 
 
+
 constructor(
 
   private service: BaseService,
@@ -61,7 +62,7 @@ criar() {
 
   if(this.formulario.valid) {
 
-    this.service.criar(this.formulario.value, this.param.gateway).subscribe(() => {
+    this.service.criar(this.param.gateway, this.formulario.value).subscribe(() => {
 
       this.router.navigate(["/lista-usuario"])
 
