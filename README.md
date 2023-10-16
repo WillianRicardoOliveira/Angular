@@ -1,34 +1,57 @@
-Executando o projeto
-ng serve
+<p align="center" style="margin-bottom: 32px">
+  <a href="https://erdkse.com" >
+    <img src="https://raw.githubusercontent.com/erdkse/adminlte-3-angular/main/src/assets/img/logo.png" alt="AdminLTE logo" width="75" height="75">
+  </a>
+</p>
 
-http://localhost:4200
+<h1 align="center">Admin LTE 3.2.0 - Angular 15.0.1</h1>
 
-Criando componentes
-ng generate component caminho-para-o-componente
+<p>
+  This repository is a form of original AdminLTE project. It is aim to use AdminLTE template with Angular.
+</p>
+<br>
 
-Criando serviços
-ng generate service caminho-para-o-servico
+<span align="center">
 
-Criando diretivas
-ng generate directive caminho-para-a-diretiva
+[![Run on Repl.it](https://repl.it/badge/github/erdkse/adminlte-3-angular)](https://repl.it/github/erdkse/adminlte-3-angular)
+![Vercel](https://img.shields.io/github/deployments/erdkse/adminlte-3-angular/production.svg?logo=vercel&label=vercel)
+![Issues](https://img.shields.io/github/issues/erdkse/adminlte-3-angular)
+![Forks](https://img.shields.io/github/forks/erdkse/adminlte-3-angular)
+![Stars](https://img.shields.io/github/stars/erdkse/adminlte-3-angular)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+![GitHub last commit](https://img.shields.io/github/last-commit/erdkse/adminlte-3-angular.svg)
+[![License](https://img.shields.io/github/license/erdkse/adminlte-3-angular.svg)](LICENSE)
+![Sponsors](https://img.shields.io/github/sponsors/erdkse.svg)
 
-# JSON Server
-```
-Criar uma pasta chamada (backend) na raiz do projeto
+</span>
 
-dentro dessa pasta executar esse comando para criar o package.json :
+<br>
 
-npm init -y
+To login website use:
 
-e
-instalar o json-server : npm i json-server
+`username:` admin@example.com<br />
+`password:` admin<br />
 
-Criar o arquivo db.json que vai conter todos os endpoints da aplicação
+## Development server
 
-executa o backend : npm start
-```
-Extençõs do SVCode
-Angular Extension Pack
-Auto Import
-Prettier
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
