@@ -35,6 +35,31 @@ import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 
+import { GridComponent } from './components/grid/grid.component';
+import { ExcluirComponent } from './components/excluir/excluir.component';
+
+import { CriarUsuarioComponent } from './pages/usuario/criar-usuario/criar-usuario.component';
+import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
+import { EditarUsuarioComponent } from './pages/usuario/editar-usuario/editar-usuario.component';
+import { FormularioValidacaoComponent } from './components/formulario-validacao/formulario-validacao.component';
+import { EditarComponent } from './components/editar/editar.component';
+import { CabecalhoPaginaComponent } from './components/cabecalho-pagina/cabecalho-pagina.component';
+import { InformacaoComponent } from './components/dashboard/informacao/informacao.component';
+import { SucessoComponent } from './components/dashboard/sucesso/sucesso.component';
+import { AvisoComponent } from './components/dashboard/aviso/aviso.component';
+import { PerigoComponent } from './components/dashboard/perigo/perigo.component';
+
+
+/* MODULO DE ETOQUE */
+import { CriarProdutoComponent } from './pages/estoque/cadastro/produto/criar-produto/criar-produto.component';
+import { EditarProdutoComponent } from './pages/estoque/cadastro/produto/editar-produto/editar-produto.component';
+import { ListarProdutoComponent } from './pages/estoque/cadastro/produto/listar-produto/listar-produto.component';
+import { CriarFornecedorComponent } from './pages/estoque/cadastro/fornecedor/criar-fornecedor/criar-fornecedor.component';
+import { EditarFornecedorComponent } from './pages/estoque/cadastro/fornecedor/editar-fornecedor/editar-fornecedor.component';
+import { ListarFornecedorComponent } from './pages/estoque/cadastro/fornecedor/listar-fornecedor/listar-fornecedor.component';
+
+
+
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
@@ -59,7 +84,31 @@ registerLocaleData(localeEn, 'en-EN');
         SubMenuComponent,
         MenuItemComponent,
         ControlSidebarComponent,
-        SidebarSearchComponent
+        SidebarSearchComponent,
+
+
+        GridComponent,
+
+        CriarUsuarioComponent,
+        ListarUsuarioComponent,
+        EditarUsuarioComponent,
+        ExcluirComponent,
+        FormularioValidacaoComponent,
+        EditarComponent,
+        CabecalhoPaginaComponent,
+        InformacaoComponent,
+        SucessoComponent,
+        AvisoComponent,
+        PerigoComponent,
+       
+        /* MODULO DE ETOQUE */
+        CriarProdutoComponent,
+        EditarProdutoComponent,
+        ListarProdutoComponent,
+        CriarFornecedorComponent,
+        EditarFornecedorComponent,
+        ListarFornecedorComponent,
+
     ],
     imports: [
         ProfabricComponentsModule,
@@ -74,7 +123,14 @@ registerLocaleData(localeEn, 'en-EN');
             timeOut: 3000,
             positionClass: 'toast-top-right',
             preventDuplicates: true
-        })
+        }),
+
+
+
+        // WillianOliveira
+        HttpClientModule,
+        ReactiveFormsModule
+
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -12,6 +12,16 @@ import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
+import { CriarUsuarioComponent } from '@pages/usuario/criar-usuario/criar-usuario.component';
+import { ListarUsuarioComponent } from '@pages/usuario/listar-usuario/listar-usuario.component';
+import { ExcluirComponent } from '@components/excluir/excluir.component';
+import { EditarUsuarioComponent } from '@pages/usuario/editar-usuario/editar-usuario.component';
+import { ListarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/listar-fornecedor/listar-fornecedor.component';
+import { CriarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/criar-fornecedor/criar-fornecedor.component';
+import { EditarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/editar-fornecedor/editar-fornecedor.component';
+import { EditarProdutoComponent } from '@pages/estoque/cadastro/produto/editar-produto/editar-produto.component';
+import { CriarProdutoComponent } from '@pages/estoque/cadastro/produto/criar-produto/criar-produto.component';
+import { ListarProdutoComponent } from '@pages/estoque/cadastro/produto/listar-produto/listar-produto.component';
 
 const routes: Routes = [
     {
@@ -33,15 +43,46 @@ const routes: Routes = [
                 component: SubMenuComponent
             },
             {
-                path: 'sub-menu-2',
-                component: BlankComponent
+                path: 'lista-usuario',
+                component: ListarUsuarioComponent
             },
+            {
+              path: 'criar-usuario',
+              component: CriarUsuarioComponent
+            },
+            {
+              path: 'editar-usuario/:id',
+              component: EditarUsuarioComponent
+            },
+
+            /* MODULO ESTOQUE */
+            { path: 'listar-fornecedor', component: ListarFornecedorComponent },
+            { path: 'criar-fornecedor', component: CriarFornecedorComponent },
+            { path: 'editar-fornecedor/:id', component: EditarFornecedorComponent },
+
+            { path: 'listar-produto', component: ListarProdutoComponent },
+            { path: 'criar-produto', component: CriarProdutoComponent },
+            { path: 'editar-produto/:id', component: EditarProdutoComponent },
+
+
+
+
             {
                 path: '',
                 component: DashboardComponent
             }
         ]
     },
+
+
+/*
+    {
+      path: "excluir/:id",
+      component: ExcluirComponent
+    },
+*/
+
+
     {
         path: 'login',
         component: LoginComponent,
