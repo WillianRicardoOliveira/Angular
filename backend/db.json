@@ -8,18 +8,15 @@
   "produto": [
     {
       "id": 1,
-      "nome": "Skol",
-      "quantidade": 10
+      "nome": "Skol 350 ml"
     },
     {
       "id": 2,
-      "nome": "Brahma",
-      "quantidade": 20
+      "nome": "Brahma 350 ml"
     },
     {
       "id": 3,
-      "nome": "Heineken",
-      "quantidade": 30
+      "nome": "Heineken 350 ml"
     }
   ],
   "fornecedor": [
@@ -29,9 +26,23 @@
     }
   ],
   "movimentacao": [
-    {
-      "id": 1,
-      "nome": "Movimentacao 01"
-    }
+   
+        {
+          "id": 2,
+          "nome": "Skol 350 ml",
+          "tipo": "Saída",
+          "quantidade": 5,
+          "total": 5,
+          "data": "17/10/2023"
+        },
+        {
+          "id": 1,
+          "nome": "Skol 350 ml",
+          "tipo": "Entrada",
+          "quantidade": 10,
+          "total": 10,
+          "data": "16/10/2023"
+        }  
+
   ]
 }

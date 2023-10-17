@@ -1,10 +1,5 @@
 
-<app-cabecalho-pagina
-
-
-[param]="parametros"
-
-></app-cabecalho-pagina>
+<app-cabecalho-pagina [param]="parametros"></app-cabecalho-pagina>
 
 <section class="content">
 
@@ -48,23 +43,12 @@
       <div class="card-body p-0">
 
         <table class="table table-striped">
-
           <thead>
-
             <tr>
-
-              <th style="width: 10px"></th>
-
-              <th>Nome</th>
-
-              <th style="width: 40px">Quantidade</th>
-
-              <th style="width: 40px"></th>
-
-              <th style="width: 40px"></th>
-
+              <th *ngFor="let da of campos; let i = index">
+                {{ campos[i] }}
+              </th>
             </tr>
-
           </thead>
 
           <tbody *ngIf="lista.length > 0, else semRegistros">
@@ -79,11 +63,14 @@
 
               <td>{{ dado.id }}.</td>
               <td>{{ dado.nome }}</td>
+              <td>{{ dado.tipo }}</td>
               <td>{{ dado.quantidade }}</td>
+              <td>{{ dado.total }}</td>
+              <td>{{ dado.data }}</td>
               <td>
-
+                <!--
                 <app-excluir [dado]="dado" [param]="parametros"></app-excluir>
-
+-->
 
               </td>
 

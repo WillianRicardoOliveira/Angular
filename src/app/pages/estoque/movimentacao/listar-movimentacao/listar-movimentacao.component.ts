@@ -11,11 +11,22 @@ export class ListarMovimentacaoComponent implements OnInit {
 
   lista: Movimentacao[] = []
 
+  campos: any = ["Id", "Nome",
+    
+    "Tipo",
+    "Quantidade",
+    "Total",
+    "Data"
+  ]
+
   parametros = {
     rota_criar: "/criar-movimentacao",
     rota_editar: "/editar-movimentacao",
     rota_listar: "/listar-movimentacao",
-    gateway: "movimentacao"
+    gateway: "movimentacao",
+
+
+
   }
 
   constructor(private service: BaseService) {}

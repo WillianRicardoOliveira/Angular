@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardEstoqueComponent implements OnInit {
   
   informacoes = {
-    descricao: "Usuários registrados",
+    descricao: "Clientes",
     total: 35,
     rota: "/lista-usuario"
   }
@@ -16,7 +16,7 @@ export class DashboardEstoqueComponent implements OnInit {
   param = {
 
     titulo: "Dashboard",
-    pagina: "Dashboard v1.0"
+    pagina: "Dashboard"
 
   }
 

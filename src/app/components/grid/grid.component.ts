@@ -13,6 +13,8 @@ export class GridComponent implements OnInit {
 
   @Input() lista: any
 
+  @Input() campos: any
+
   @Input() parametros: any
 
   indexTarefa = -1
