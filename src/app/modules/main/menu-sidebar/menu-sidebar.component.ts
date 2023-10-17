@@ -35,7 +35,7 @@ export const MENU = [
     {
         name: 'Dashboard',
         iconClasses: 'fas fa-tachometer-alt',
-        path: ['/']
+        path: ['/dashboard-estoque']
     },
     {
         name: 'Blank',
@@ -66,6 +66,12 @@ export const MENU = [
                 name: 'Produto',
                 iconClasses: 'fas fa-file',
                 path: ['/listar-produto']
+
+            },
+            {
+                name: 'Movimentacao',
+                iconClasses: 'fas fa-file',
+                path: ['/listar-movimentacao']
 
             }
         ]

@@ -2,75 +2,36 @@
   "usuario": [
     {
       "id": 1,
-      "nome": "Willian 0011"
-    },
-    {
-      "id": 2,
-      "nome": "Willian 002"
-    },
-    {
-      "id": 3,
-      "nome": "Willian 003"
-    },
-    {
-      "id": 4,
-      "nome": "Willian 004"
-    },
-    {
-      "id": 5,
-      "nome": "Willian 005"
-    },
-    {
-      "id": 6,
-      "nome": "Willian 006"
-    },
-    {
-      "id": 7,
-      "nome": "Willian 007"
-    },
-    {
-      "id": 8,
-      "nome": "Willian 008"
-    },
-    {
-      "id": 9,
-      "nome": "Willian 009"
-    },
-    {
-      "id": 10,
-      "nome": "Willian 010"
-    },
-    {
-      "nome": "Fornecedor 01",
-      "id": 11
+      "nome": "Administrador"
     }
   ],
   "produto": [
     {
       "id": 1,
-      "nome": "Produto 1"
+      "nome": "Skol",
+      "quantidade": 10
     },
     {
       "id": 2,
-      "nome": "Produto 2"
+      "nome": "Brahma",
+      "quantidade": 20
     },
     {
       "id": 3,
-      "nome": "Produto 3"
+      "nome": "Heineken",
+      "quantidade": 30
     }
   ],
   "fornecedor": [
     {
       "id": 1,
-      "nome": "Fornecedor 01"
-    },
+      "nome": "Ambev"
+    }
+  ],
+  "movimentacao": [
     {
-      "id": 2,
-      "nome": "Fornecedor 02"
-    },
-    {
-      "id": 3,
-      "nome": "Fornecedor 03"
+      "id": 1,
+      "nome": "Movimentacao 01"
     }
   ]
 }

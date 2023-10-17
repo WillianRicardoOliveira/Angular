@@ -58,6 +58,10 @@ import { ListarProdutoComponent } from './pages/estoque/cadastro/produto/listar-
 import { CriarFornecedorComponent } from './pages/estoque/cadastro/fornecedor/criar-fornecedor/criar-fornecedor.component';
 import { EditarFornecedorComponent } from './pages/estoque/cadastro/fornecedor/editar-fornecedor/editar-fornecedor.component';
 import { ListarFornecedorComponent } from './pages/estoque/cadastro/fornecedor/listar-fornecedor/listar-fornecedor.component';
+import { CriarMovimentacaoComponent } from './pages/estoque/movimentacao/criar-movimentacao/criar-movimentacao.component';
+import { EditarMovimentacaoComponent } from './pages/estoque/movimentacao/editar-movimentacao/editar-movimentacao.component';
+import { ListarMovimentacaoComponent } from './pages/estoque/movimentacao/listar-movimentacao/listar-movimentacao.component';
+import { DashboardEstoqueComponent } from './pages/estoque/dashboard-estoque/dashboard-estoque.component';
 
 
 
@@ -110,6 +114,10 @@ registerLocaleData(localeEn, 'en-EN');
         CriarFornecedorComponent,
         EditarFornecedorComponent,
         ListarFornecedorComponent,
+        CriarMovimentacaoComponent,
+        EditarMovimentacaoComponent,
+        ListarMovimentacaoComponent,
+        DashboardEstoqueComponent,
 
 
     ],

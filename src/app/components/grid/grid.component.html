@@ -57,6 +57,8 @@
 
               <th>Nome</th>
 
+              <th style="width: 40px">Quantidade</th>
+
               <th style="width: 40px"></th>
 
               <th style="width: 40px"></th>
@@ -76,9 +78,8 @@
             >
 
               <td>{{ dado.id }}.</td>
-
               <td>{{ dado.nome }}</td>
-
+              <td>{{ dado.quantidade }}</td>
               <td>
 
                 <app-excluir [dado]="dado" [param]="parametros"></app-excluir>
