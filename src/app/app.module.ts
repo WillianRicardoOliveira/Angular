@@ -62,6 +62,35 @@ import { CriarMovimentacaoComponent } from './pages/estoque/movimentacao/criar-m
 import { EditarMovimentacaoComponent } from './pages/estoque/movimentacao/editar-movimentacao/editar-movimentacao.component';
 import { ListarMovimentacaoComponent } from './pages/estoque/movimentacao/listar-movimentacao/listar-movimentacao.component';
 import { DashboardEstoqueComponent } from './pages/estoque/dashboard-estoque/dashboard-estoque.component';
+import { InputTextComponent } from './components/formulario/input-text/input-text.component';
+
+
+/* Angular Material */
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
+import { ContainerComponent } from './components/site/container/container.component';
+
+import { BannerComponent } from './components/site/banner/banner.component';
+import { HeaderSiteComponent } from './components/site/header-site/header-site.component';
+import { FooterSiteComponent } from './components/site/footer-site/footer-site.component';
+import { HomeSiteComponent } from './pages/site/home-site/home-site.component';
+import { CardComponent } from './components/site/card/card.component';
+import { CardBuscaComponent } from './components/site/card-busca/card-busca.component';
+import { CardDepoimentoComponent } from './components/site/card-depoimento/card-depoimento.component';
+import { FormBuscaComponent } from './components/site/form-busca/form-busca.component';
+import { ModalComponent } from './components/site/modal/modal.component';
+import { BotaoControleComponent } from './components/site/botao-controle/botao-controle.component';
 
 
 
@@ -118,6 +147,23 @@ registerLocaleData(localeEn, 'en-EN');
         EditarMovimentacaoComponent,
         ListarMovimentacaoComponent,
         DashboardEstoqueComponent,
+        
+        InputTextComponent,
+                  BannerComponent,
+                  ContainerComponent,
+                  
+        /* Site */
+        HeaderSiteComponent,
+        FooterSiteComponent,
+        HomeSiteComponent,
+        CardComponent,
+        CardBuscaComponent,
+        CardDepoimentoComponent,
+        FormBuscaComponent,
+        ModalComponent,
+        BotaoControleComponent,
+        
+                  
 
 
     ],
@@ -140,7 +186,22 @@ registerLocaleData(localeEn, 'en-EN');
 
         // WillianOliveira
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+       // MatFormFieldModule,
+       // MatInputModule
+
+        /* Angular Material */
+        MatToolbarModule, /* https://material.angular.io/components/toolbar/overview */
+        MatButtonModule, /* https://material.angular.io/components/button/overview */
+        MatCardModule,
+        MatButtonToggleModule,
+        MatIconModule, /* https://fonts.google.com/icons?hl=pt-br */
+        MatChipsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatDialogModule
 
     ],
     providers: [],

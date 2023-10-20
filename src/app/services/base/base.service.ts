@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,12 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class BaseService {
 
-  private readonly api = "http://localhost:3000/"
+  private api: string = environment.api
+
+
+
+  //private readonly api = "http://localhost:3000/"
 
   constructor(private http: HttpClient) { }
 
   listar(gateway: string): Observable<any[]> {
-
+    console.log("API : ", this.api)
     const url = `${this.api}${gateway}`
 
     return this.http.get<any>(url)

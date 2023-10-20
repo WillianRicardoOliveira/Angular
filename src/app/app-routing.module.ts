@@ -28,11 +28,14 @@ import { CriarMovimentacaoComponent } from '@pages/estoque/movimentacao/criar-mo
 import { ListarMovimentacaoComponent } from '@pages/estoque/movimentacao/listar-movimentacao/listar-movimentacao.component';
 import { DashboardEstoqueComponent } from '@pages/estoque/dashboard-estoque/dashboard-estoque.component';
 
+import { HomeSiteComponent } from '@pages/site/home-site/home-site.component';
+
 
 const routes: Routes = [
     {
         path: '',
-        component: MainComponent,
+        //component: MainComponent,
+        component: HomeSiteComponent,
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         children: [

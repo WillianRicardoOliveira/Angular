@@ -2,25 +2,42 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {Gatekeeper} from 'gatekeeper-client-sdk';
+import { environment } from 'environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AppService {
+
+    private api: string = environment.api
+
+
+
     public user: any = null;
 
-    constructor(private router: Router, private toastr: ToastrService) {}
+    constructor(
+        private http: HttpClient,
+        
+        private router: Router, private toastr: ToastrService) {}
 
-    async loginByAuth({email, password}) {
+    autenticacao(usuario: string, senha: string): Observable<any> {
+
+        let login = usuario
+
         try {
-            const token = "token_123456"//await Gatekeeper.loginByAuth(email, password);
 
-          console.log("TOKEN : ", token)
+            return this.http.post(`${this.api}login`, {login, senha}, {});
 
-            localStorage.setItem('token', token);
+            //const token = "token_123456"//await Gatekeeper.loginByAuth(email, password);
+
+        //  console.log("TOKEN : ", token)
+
+         //   localStorage.setItem('token', token);
           //  await this.getProfile();
-            this.router.navigate(['/']);
-            this.toastr.success('Login success');
+           // this.router.navigate(['/']);
+           // this.toastr.success('Login success');
         } catch (error) {
             this.toastr.error(error.message);
         }
