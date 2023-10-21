@@ -77,6 +77,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 import { ContainerComponent } from './components/site/container/container.component';
@@ -92,7 +93,9 @@ import { FormBuscaComponent } from './components/site/form-busca/form-busca.comp
 import { ModalComponent } from './components/site/modal/modal.component';
 import { BotaoControleComponent } from './components/site/botao-controle/botao-controle.component';
 
-import { PromocoesComponent } from './pages/site/promocoes/promocoes.component';
+import { DropdownUfComponent } from './components/dropdown-uf/dropdown-uf.component';
+import { DepoimentoSiteComponent } from './pages/site/depoimento-site/depoimento-site.component';
+import { ConteudoSiteComponent } from './pages/site/conteudo-site/conteudo-site.component';
 
 
 registerLocaleData(localeEn, 'en-EN');
@@ -163,8 +166,10 @@ registerLocaleData(localeEn, 'en-EN');
         FormBuscaComponent,
         ModalComponent,
         BotaoControleComponent,
-        PromocoesComponent
-                  
+       
+        DropdownUfComponent,
+        DepoimentoSiteComponent,
+        ConteudoSiteComponent         
 
 
     ],
@@ -202,7 +207,8 @@ registerLocaleData(localeEn, 'en-EN');
         MatInputModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatDialogModule
+        MatDialogModule,
+        MatAutocompleteModule
 
     ],
     providers: [],

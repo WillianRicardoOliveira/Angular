@@ -1,6 +1,4 @@
-import { Promocao } from '@/interface/interface';
 import { Component, OnInit } from '@angular/core';
-import { PromocaoService } from '@services/site/promocao.service';
 
 @Component({
   selector: 'app-home-site',
@@ -9,11 +7,8 @@ import { PromocaoService } from '@services/site/promocao.service';
 })
 export class HomeSiteComponent implements OnInit {
   
-  constructor( private service: PromocaoService ) {}
+  constructor() {}
 
-  ngOnInit(): void {
-
-  
-  }
+  ngOnInit(): void {}
 
 }

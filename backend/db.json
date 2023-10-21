@@ -46,12 +46,27 @@
 
   ],
 
-  "promocao": [
+  "conteudo": [
     {
       "id": 1,
       "destino": "Desenvolvimento",
       "imagem": "assets/imagens/Veneza.png",
       "preco": 125
+    }
+  ],
+  "estados": [
+    {
+      "id": 1,
+      "nome": "Paraná",
+      "sigla": "PR"
+    }
+  ],
+  "depoimentos": [
+    {
+      "id": 1,
+      "imagem": "../../../../assets/imagens/avatar3.png",
+      "texto": "Estou muito feliz em desenvolver o meu site",
+      "autor": "Willian Ricardo Oliveira"
     }
   ]
 

@@ -15,4 +15,14 @@ export class FormBuscaService {
     })
 
   }
+
+  obterControle(nome:string): FormControl {
+    const control = this.formulario.get(nome);
+    if (!control) {
+      throw new Error(`FormControl com nome "${nome}" não existe.`);
+    }
+    return control as FormControl;
+  }
+
+
 }

@@ -1,4 +1,4 @@
-import { Promocao } from '@/interface/interface';
+import { Conteudo } from '@/interface/interface';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-busca.component.scss']
 })
 export class CardBuscaComponent {
-  @Input() promocao!: Promocao;
+  @Input() conteudo!: Conteudo;
 }
