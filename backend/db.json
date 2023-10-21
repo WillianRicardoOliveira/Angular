@@ -44,5 +44,16 @@
           "data": "16/10/2023"
         }  
 
+  ],
+
+  "promocao": [
+    {
+      "id": 1,
+      "destino": "Desenvolvimento",
+      "imagem": "assets/imagens/Veneza.png",
+      "preco": 125
+    }
   ]
+
+
 }

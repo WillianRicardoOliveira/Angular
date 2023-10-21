@@ -92,6 +92,7 @@ import { FormBuscaComponent } from './components/site/form-busca/form-busca.comp
 import { ModalComponent } from './components/site/modal/modal.component';
 import { BotaoControleComponent } from './components/site/botao-controle/botao-controle.component';
 
+import { PromocoesComponent } from './pages/site/promocoes/promocoes.component';
 
 
 registerLocaleData(localeEn, 'en-EN');
@@ -162,7 +163,7 @@ registerLocaleData(localeEn, 'en-EN');
         FormBuscaComponent,
         ModalComponent,
         BotaoControleComponent,
-        
+        PromocoesComponent
                   
 
 

@@ -1,20 +1,28 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService {
+export class BaseService implements OnInit {
 
   private api: string = environment.api
 
+  constructor( private http: HttpClient ) {}
+
+  ngOnInit(): void {}
+
+  get(endPoint: string): Observable<any[]> {
+    
+    return this.http.get<any>(`${this.api}/${endPoint}`)
+
+  }
 
 
-  //private readonly api = "http://localhost:3000/"
 
-  constructor(private http: HttpClient) { }
+
 
   listar(gateway: string): Observable<any[]> {
     console.log("API : ", this.api)
