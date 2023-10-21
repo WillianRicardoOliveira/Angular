@@ -59,6 +59,11 @@
       "id": 1,
       "nome": "Paraná",
       "sigla": "PR"
+    },
+    {
+      "id": 1,
+      "nome": "Rio de Janeiro",
+      "sigla": "RS"
     }
   ],
   "depoimentos": [

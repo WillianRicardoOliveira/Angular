@@ -96,6 +96,7 @@ import { BotaoControleComponent } from './components/site/botao-controle/botao-c
 import { DropdownUfComponent } from './components/dropdown-uf/dropdown-uf.component';
 import { DepoimentoSiteComponent } from './pages/site/depoimento-site/depoimento-site.component';
 import { ConteudoSiteComponent } from './pages/site/conteudo-site/conteudo-site.component';
+import { SeletorPassageiroComponent } from './components/site/seletor-passageiro/seletor-passageiro/seletor-passageiro.component';
 
 
 registerLocaleData(localeEn, 'en-EN');
@@ -169,7 +170,8 @@ registerLocaleData(localeEn, 'en-EN');
        
         DropdownUfComponent,
         DepoimentoSiteComponent,
-        ConteudoSiteComponent         
+        ConteudoSiteComponent,
+        SeletorPassageiroComponent         
 
 
     ],
