@@ -78,6 +78,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatRadioModule  } from '@angular/material/radio' 
+import { MatDividerModule } from '@angular/material/divider'
+import { MatCheckboxModule } from '@angular/material/checkbox'
+
 
 
 import { ContainerComponent } from './components/site/container/container.component';
@@ -97,6 +101,9 @@ import { DropdownUfComponent } from './components/dropdown-uf/dropdown-uf.compon
 import { DepoimentoSiteComponent } from './pages/site/depoimento-site/depoimento-site.component';
 import { ConteudoSiteComponent } from './pages/site/conteudo-site/conteudo-site.component';
 import { SeletorPassageiroComponent } from './components/site/seletor-passageiro/seletor-passageiro/seletor-passageiro.component';
+import { LoginSiteComponent } from './pages/site/login-site/login-site.component';
+import { FormBasePerfilSiteComponent } from './components/site/form-base-perfil-site/form-base-perfil-site.component';
+import { PerfilSiteComponent } from './pages/site/perfil-site/perfil-site.component';
 
 
 registerLocaleData(localeEn, 'en-EN');
@@ -171,7 +178,10 @@ registerLocaleData(localeEn, 'en-EN');
         DropdownUfComponent,
         DepoimentoSiteComponent,
         ConteudoSiteComponent,
-        SeletorPassageiroComponent         
+        SeletorPassageiroComponent,
+        LoginSiteComponent,
+        FormBasePerfilSiteComponent,
+        PerfilSiteComponent         
 
 
     ],
@@ -210,7 +220,10 @@ registerLocaleData(localeEn, 'en-EN');
         MatDatepickerModule,
         MatNativeDateModule,
         MatDialogModule,
-        MatAutocompleteModule
+        MatAutocompleteModule,
+        MatRadioModule,
+        MatDividerModule,
+        MatCheckboxModule 
 
     ],
     providers: [],

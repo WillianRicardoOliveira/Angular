@@ -29,6 +29,8 @@ import { ListarMovimentacaoComponent } from '@pages/estoque/movimentacao/listar-
 import { DashboardEstoqueComponent } from '@pages/estoque/dashboard-estoque/dashboard-estoque.component';
 
 import { HomeSiteComponent } from '@pages/site/home-site/home-site.component';
+import { LoginSiteComponent } from '@pages/site/login-site/login-site.component';
+import { PerfilSiteComponent } from '@pages/site/perfil-site/perfil-site.component';
 
 
 const routes: Routes = [
@@ -91,12 +93,21 @@ const routes: Routes = [
     },
 
 
-/*
+/* Rotas para o site */
     {
-      path: "excluir/:id",
-      component: ExcluirComponent
+      path: "login-site",
+      component: LoginSiteComponent
     },
-*/
+    {
+      path: "perfil-site",
+      component: PerfilSiteComponent
+    },
+
+
+
+
+
+
 
 
     {

@@ -15,10 +15,13 @@ export class BaseService implements OnInit {
   ngOnInit(): void {}
 
   get(endPoint: string): Observable<any[]> {
-    
     return this.http.get<any>(`${this.api}/${endPoint}`)
-
   }
+
+  post(gateway: string, dados: any): Observable<any> {
+    return this.http.post<any>(`${this.api}/${gateway}`, dados)
+  }
+
 
 
 
