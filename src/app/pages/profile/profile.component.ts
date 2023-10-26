@@ -47,7 +47,7 @@ export class ProfileComponent {
     
       criar() {
         if(this.formulario.valid) {  
-          this.service.criar(this.parametros.gateway, this.formulario.value).subscribe(() => {
+          this.service.cadastrar(this.parametros.gateway, this.formulario.value).subscribe(() => {
             this.router.navigate([this.parametros.rota_listar])
             this.toastr.success('Salvo com successo');
           })

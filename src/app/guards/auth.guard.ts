@@ -1,3 +1,20 @@
+import { inject } from "@angular/core"
+import { Router } from "@angular/router"
+import { UserService } from "@services/user/user.service"
+
+export const AuthGuard = () => {
+    const userService = inject(UserService)
+    const router = inject(Router)
+
+    if(userService.estaLogado()){
+        return true;
+    } else {
+        router.navigate(['/login'])
+        return false
+    }
+}
+
+/*
 import {Injectable} from '@angular/core';
 import {
     CanActivate,
@@ -51,3 +68,4 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         }
     }
 }
+*/

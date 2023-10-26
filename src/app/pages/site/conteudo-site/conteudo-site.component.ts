@@ -1,4 +1,4 @@
-import { Conteudo } from '@/interface/interface';
+import { Conteudo } from '@/interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { ConteudoService } from '@services/site/conteudo/conteudo.service';
 

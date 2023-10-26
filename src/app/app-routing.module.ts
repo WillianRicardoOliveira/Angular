@@ -2,20 +2,16 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {MainComponent} from '@modules/main/main.component';
 import {BlankComponent} from '@pages/blank/blank.component';
-import {LoginComponent} from '@modules/login/login.component';
+
 import {ProfileComponent} from '@pages/profile/profile.component';
 import {RegisterComponent} from '@modules/register/register.component';
 import {DashboardComponent} from '@pages/dashboard/dashboard.component';
-import {AuthGuard} from '@guards/auth.guard';
+
 import {NonAuthGuard} from '@guards/non-auth.guard';
 import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.component';
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {MainMenuComponent} from '@pages/main-menu/main-menu.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
-import { CriarUsuarioComponent } from '@pages/usuario/criar-usuario/criar-usuario.component';
-import { ListarUsuarioComponent } from '@pages/usuario/listar-usuario/listar-usuario.component';
-import { ExcluirComponent } from '@components/excluir/excluir.component';
-import { EditarUsuarioComponent } from '@pages/usuario/editar-usuario/editar-usuario.component';
 
 import { ListarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/listar-fornecedor/listar-fornecedor.component';
 import { CriarFornecedorComponent } from '@pages/estoque/cadastro/fornecedor/criar-fornecedor/criar-fornecedor.component';
@@ -29,17 +25,22 @@ import { ListarMovimentacaoComponent } from '@pages/estoque/movimentacao/listar-
 import { DashboardEstoqueComponent } from '@pages/estoque/dashboard-estoque/dashboard-estoque.component';
 
 import { HomeSiteComponent } from '@pages/site/home-site/home-site.component';
-import { LoginSiteComponent } from '@pages/site/login-site/login-site.component';
-import { PerfilSiteComponent } from '@pages/site/perfil-site/perfil-site.component';
 
+import { PerfilComponent } from '@pages/site/perfil/perfil.component';
+import { AuthGuard } from '@guards/auth.guard';
+
+
+/* Site */
+import {LoginComponent} from '@pages/site/login/login.component';
+import { CadastroComponent } from '@pages/site/cadastro/cadastro.component';
 
 const routes: Routes = [
     {
         path: '',
         //component: MainComponent,
         component: HomeSiteComponent,
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard],
+        //canActivate: [AuthGuard],
+       // canActivateChild: [AuthGuard],
         children: [
             {
                 path: 'profile',
@@ -53,18 +54,7 @@ const routes: Routes = [
                 path: 'sub-menu-1',
                 component: SubMenuComponent
             },
-            {
-                path: 'lista-usuario',
-                component: ListarUsuarioComponent
-            },
-            {
-              path: 'criar-usuario',
-              component: CriarUsuarioComponent
-            },
-            {
-              path: 'editar-usuario/:id',
-              component: EditarUsuarioComponent
-            },
+          
 
 
             /* MODULO ESTOQUE */
@@ -93,15 +83,10 @@ const routes: Routes = [
     },
 
 
-/* Rotas para o site */
-    {
-      path: "login-site",
-      component: LoginSiteComponent
-    },
-    {
-      path: "perfil-site",
-      component: PerfilSiteComponent
-    },
+    /* Site */
+    { path: "login", component: LoginComponent },
+    { path: "cadastro", component: CadastroComponent },
+    { path: "perfil", component: PerfilComponent, canActivate: [AuthGuard] },
 
 
 
@@ -109,12 +94,12 @@ const routes: Routes = [
 
 
 
-
+/*
     {
         path: 'login',
         component: LoginComponent,
         canActivate: [NonAuthGuard]
-    },
+    },*/
     {
         path: 'register',
         component: RegisterComponent,

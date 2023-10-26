@@ -30,7 +30,7 @@ export class EditarProdutoComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
-    this.service.buscarPorId(this.parametros.gateway, parseInt(id!)).subscribe((dados) => {
+    this.service.detalhar(this.parametros.gateway, parseInt(id!)).subscribe((dados) => {
       this.formulario = this.formBuilder.group({
         id: [dados.id],
         nome: [dados.nome, Validators.compose([
@@ -44,7 +44,7 @@ export class EditarProdutoComponent implements OnInit {
 
   editar() {
     if(this.formulario.valid) {
-      this.service.editar(this.parametros.gateway, this.formulario.value).subscribe(() => {
+      this.service.atualizar(this.parametros.gateway, this.formulario.value).subscribe(() => {
         this.router.navigate([this.parametros.rota_listar])
         this.toastr.success('Salvo com successo');
       })

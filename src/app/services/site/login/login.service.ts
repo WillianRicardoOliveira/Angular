@@ -8,10 +8,8 @@ export class LoginService {
 
   constructor(private service: BaseService) {}
 
-  login(login: string, senha: string) {
-
-    return this.service.post("login", {login, senha})
-
+  login(email: string, senha: string) {
+    return this.service.login("login", {email, senha})
   }
 
 }

@@ -4,15 +4,12 @@ import { BaseService } from '@services/base/base.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ConteudoService implements OnInit {
+export class ConteudoService {
 
-  constructor( private service: BaseService ) {}
-
-  ngOnInit(): void {}
+  constructor(private service: BaseService) {}
 
   listar () {
-  
-    return this.service.get("conteudo")
-  
+    return this.service.listar("conteudo")
   }
+  
 }

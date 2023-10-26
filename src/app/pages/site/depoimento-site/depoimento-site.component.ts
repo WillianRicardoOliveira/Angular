@@ -1,4 +1,4 @@
-import { Depoimento } from '@/interface/interface';
+import { Depoimento } from '@/interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { DepoimentoService } from '@services/site/depoimento/depoimento.service';
 

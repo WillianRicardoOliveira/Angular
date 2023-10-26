@@ -1,4 +1,4 @@
-import { Depoimento } from '@/interface/interface';
+import { Depoimento } from '@/interfaces/interfaces';
 import { Component, Input } from '@angular/core';
 
 @Component({

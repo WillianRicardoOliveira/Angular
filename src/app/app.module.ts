@@ -1,11 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from '@/app-routing.module';
 import {AppComponent} from './app.component';
 import {MainComponent} from '@modules/main/main.component';
-import {LoginComponent} from '@modules/login/login.component';
+
 import {HeaderComponent} from '@modules/main/header/header.component';
 import {FooterComponent} from '@modules/main/footer/footer.component';
 import {MenuSidebarComponent} from '@modules/main/menu-sidebar/menu-sidebar.component';
@@ -36,11 +36,7 @@ import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 
 import { GridComponent } from './components/grid/grid.component';
-import { ExcluirComponent } from './components/excluir/excluir.component';
 
-import { CriarUsuarioComponent } from './pages/usuario/criar-usuario/criar-usuario.component';
-import { ListarUsuarioComponent } from './pages/usuario/listar-usuario/listar-usuario.component';
-import { EditarUsuarioComponent } from './pages/usuario/editar-usuario/editar-usuario.component';
 import { FormularioValidacaoComponent } from './components/formulario-validacao/formulario-validacao.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { CabecalhoPaginaComponent } from './components/cabecalho-pagina/cabecalho-pagina.component';
@@ -101,9 +97,15 @@ import { DropdownUfComponent } from './components/dropdown-uf/dropdown-uf.compon
 import { DepoimentoSiteComponent } from './pages/site/depoimento-site/depoimento-site.component';
 import { ConteudoSiteComponent } from './pages/site/conteudo-site/conteudo-site.component';
 import { SeletorPassageiroComponent } from './components/site/seletor-passageiro/seletor-passageiro/seletor-passageiro.component';
-import { LoginSiteComponent } from './pages/site/login-site/login-site.component';
-import { FormBasePerfilSiteComponent } from './components/site/form-base-perfil-site/form-base-perfil-site.component';
-import { PerfilSiteComponent } from './pages/site/perfil-site/perfil-site.component';
+
+
+import { PerfilComponent } from './pages/site/perfil/perfil.component';
+import { AutenticacaoInterceptor } from './interceptors/autenticacao.interceptor';
+
+/* Site */
+import { LoginComponent } from './pages/site/login/login.component';
+import { CadastroComponent } from './pages/site/cadastro/cadastro.component';
+import { FormBasePerfilComponent } from './components/site/form-base-perfil/form-base-perfil.component';
 
 
 registerLocaleData(localeEn, 'en-EN');
@@ -112,7 +114,7 @@ registerLocaleData(localeEn, 'en-EN');
     declarations: [
         AppComponent,
         MainComponent,
-        LoginComponent,
+        
         HeaderComponent,
         FooterComponent,
         MenuSidebarComponent,
@@ -135,10 +137,6 @@ registerLocaleData(localeEn, 'en-EN');
 
         GridComponent,
 
-        CriarUsuarioComponent,
-        ListarUsuarioComponent,
-        EditarUsuarioComponent,
-        ExcluirComponent,
         FormularioValidacaoComponent,
         EditarComponent,
         CabecalhoPaginaComponent,
@@ -165,6 +163,12 @@ registerLocaleData(localeEn, 'en-EN');
                   ContainerComponent,
                   
         /* Site */
+        LoginComponent,
+        CadastroComponent,
+        FormBasePerfilComponent,
+
+
+
         HeaderSiteComponent,
         FooterSiteComponent,
         HomeSiteComponent,
@@ -179,9 +183,12 @@ registerLocaleData(localeEn, 'en-EN');
         DepoimentoSiteComponent,
         ConteudoSiteComponent,
         SeletorPassageiroComponent,
-        LoginSiteComponent,
-        FormBasePerfilSiteComponent,
-        PerfilSiteComponent         
+        
+        
+        PerfilComponent,
+        FormBasePerfilComponent,
+        
+                 
 
 
     ],
@@ -226,7 +233,11 @@ registerLocaleData(localeEn, 'en-EN');
         MatCheckboxModule 
 
     ],
-    providers: [],
+    providers: [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: AutenticacaoInterceptor,
+        multi: true
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

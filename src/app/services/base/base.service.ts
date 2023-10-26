@@ -1,71 +1,54 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ConditionalExpr } from '@angular/compiler';
+import { Injectable } from '@angular/core';
+import { UserService } from '@services/user/user.service';
 import { environment } from 'environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
+
+interface AuthResponse {
+    token: string
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService implements OnInit {
+export class BaseService {
 
   private api: string = environment.api
+  
+  constructor(
+    private http: HttpClient,
+    private userService: UserService
+    ) {}
 
-  constructor( private http: HttpClient ) {}
+  login(endPoint: string, dados: any): Observable<HttpResponse<AuthResponse>> {
+    return this.http.post<AuthResponse>(`${this.api}/${endPoint}`, dados, { observe: "response" })
+        .pipe(
+          tap((response) => {
+            const authtoken = response.body?.token || ""
+            this.userService.salvarToken(authtoken)
+          })
+        )
+  }
 
-  ngOnInit(): void {}
+  cadastrar(endPoint: string, dados: any): Observable<any> {
+    return this.http.post<any>(`${this.api}/${endPoint}`, dados)
+  }
 
-  get(endPoint: string): Observable<any[]> {
+  listar(endPoint: string): Observable<any[]> {
     return this.http.get<any>(`${this.api}/${endPoint}`)
   }
 
-  post(gateway: string, dados: any): Observable<any> {
-    return this.http.post<any>(`${this.api}/${gateway}`, dados)
+  atualizar(endPoint: string, dados: any): Observable<any> {
+    return this.http.put<any>(`${this.api}/${endPoint}/${dados.id}`, dados)
   }
 
-
-
-
-
-
-  listar(gateway: string): Observable<any[]> {
-    console.log("API : ", this.api)
-    const url = `${this.api}${gateway}`
-
-    return this.http.get<any>(url)
-
+  excluir(endPoint: string, id: number): Observable<any> {
+    return this.http.delete<any>(`${this.api}/${endPoint}/${id}`)
   }
 
-  criar(gateway: string, dados: any): Observable<any> {
-    
-    const url = `${this.api}${gateway}`
-    
-    return this.http.post<any>(url, dados)
-
-  }
-
-  editar(gateway: string, dados: any): Observable<any> {
-
-    const url = `${this.api}${gateway}/${dados.id}`
-
-    return this.http.put<any>(url, dados)
-
-  }
-
-  excluir(id: number): Observable<any> {
-
-    const url = `${this.api}/${id}`
-
-    return this.http.delete<any>(url)
-
-  }
-
-
-  buscarPorId(gateway: string, id: number): Observable<any> {
-
-    const url = `${this.api}${gateway}/${id}`
-
-    return this.http.get<any>(url)
-
+  detalhar(endPoint: string, id: number): Observable<any> {
+    return this.http.get<any>(`${this.api}/${endPoint}/${id}`)
   }
 
 }
