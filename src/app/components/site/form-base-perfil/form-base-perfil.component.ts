@@ -1,4 +1,3 @@
-import { Estado } from '@/interfaces/interfaces';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormValidations } from '@components/form-validations';
@@ -13,7 +12,7 @@ export class FormBasePerfilComponent implements OnInit {
   
   cadastroForm!: FormGroup;
   
-  estadoControl = new FormControl<Estado | null>(null, Validators.required);
+  //estadoControl = new FormControl<Estado | null>(null, Validators.required);
 
   @Input() perfilComponent = false
   @Input() titulo: string = "Crie sua conta"
@@ -21,6 +20,7 @@ export class FormBasePerfilComponent implements OnInit {
 
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>()
   @Output() sair: EventEmitter<any> = new EventEmitter<any>()
+  @Output() buscar: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,14 +35,15 @@ export class FormBasePerfilComponent implements OnInit {
       cpf: [null, [Validators.required]],
       telefone: [null, Validators.required],
 
-      logradouro: [null, Validators.required],
-      bairro: [null, Validators.required],
       cep: [null, Validators.required],
-      estado: this.estadoControl,
-      cidade: [null, Validators.required],
-      numero: [null, Validators.required],
+      logradouro: [null, Validators.required],
       complemento: [null],
-
+      bairro: [null, Validators.required],
+      //estado: this.estadoControl,
+      localidade: [null, Validators.required],
+      uf: [null, Validators.required],
+      numero: [null, Validators.required],
+      
       email: [null, [Validators.required, Validators.email]],
       senha: [null, [Validators.required, Validators.minLength(3)]],
       confirmarEmail: [null, [Validators.required, Validators.email, FormValidations.equalTo('email')]],
@@ -64,6 +65,10 @@ export class FormBasePerfilComponent implements OnInit {
 
   deslogar() {
     this.sair.emit()
+  }
+
+  buscaDadosEndereco() {
+    this.buscar.emit()
   }
 
 }

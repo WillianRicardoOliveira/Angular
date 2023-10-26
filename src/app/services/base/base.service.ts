@@ -1,5 +1,4 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { ConditionalExpr } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { UserService } from '@services/user/user.service';
 import { environment } from 'environments/environment';

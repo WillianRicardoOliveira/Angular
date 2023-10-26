@@ -53,13 +53,13 @@ export class PerfilComponent implements OnInit {
         cpf: this.cadastro.cpf,
         telefone: this.cadastro.telefone,
 
-        logradouro: this.cadastro.endereco.logradouro,
-        bairro: this.cadastro.endereco.bairro,
         cep: this.cadastro.endereco.cep,
-        //estado: this.cadastro.estado,
-        cidade: this.cadastro.endereco.cidade,
-        numero: this.cadastro.endereco.numero,
-        complemento: this.cadastro.endereco.complemento
+        logradouro: this.cadastro.endereco.logradouro,
+        complemento: this.cadastro.endereco.complemento,
+        bairro: this.cadastro.endereco.bairro,
+        localidade: this.cadastro.endereco.localidade,
+        uf: this.cadastro.endereco.uf,
+        numero: this.cadastro.endereco.numero
     })
   }
 
@@ -77,13 +77,13 @@ export class PerfilComponent implements OnInit {
       cpf: this.form?.value.cpf,
       telefone: this.form?.value.telefone,
       
-      logradouro: this.form?.value.endereco.logradouro,
-      bairro: this.form?.value.endereco.bairro,
       cep: this.form?.value.endereco.cep,
-      //estado: this.cadastro.estado,
-      cidade: this.form?.value.endereco.cidade,
-      numero: this.form?.value.endereco.numero,
-      complemento: this.form?.value.endereco.complemento
+      logradouro: this.form?.value.endereco.logradouro,
+      complemento: this.form?.value.endereco.complemento,
+      bairro: this.form?.value.endereco.bairro,
+      localidade: this.form?.value.endereco.localidade,
+      uf: this.form?.value.endereco.uf,
+      numero: this.form?.value.endereco.numero
     }
 
     this.cadastroService.atualizar(dadosAtualizados).subscribe({
@@ -100,6 +100,20 @@ export class PerfilComponent implements OnInit {
   deslogar() {
     this.userService.logout()
     this.router.navigate(["/login"])
+  }
+
+  buscaDadosEndereco() {
+    this.cadastroService.buscaDadosEndereco(this.form?.value.cep).subscribe(endereco => {
+      this.form = this.cadastroService.getCadastro()
+      this.form?.patchValue({
+          cep: endereco.cep,
+          logradouro: endereco.logradouro,
+          complemento: endereco.complemento,
+          bairro: endereco.bairro,
+          localidade: endereco.localidade,
+          uf: endereco.uf
+      })
+    })
   }
 
 }

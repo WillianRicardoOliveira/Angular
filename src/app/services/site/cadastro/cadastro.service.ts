@@ -32,4 +32,8 @@ export class CadastroService {
     return this.service.detalhar("pessoa", id)
   }
 
+  buscaDadosEndereco(cep: number){
+    return this.service.detalhar("endereco/buscar", cep)
+  }
+  
 }

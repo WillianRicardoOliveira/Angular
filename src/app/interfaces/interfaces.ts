@@ -29,21 +29,21 @@ export interface PessoaUsuario {
 }
   
 export interface Endereco {
-    logradouro: string,
-    bairro: string,
     cep: string,
-    estado: Estado,
-    cidade: string,
-    numero: string,
+    logradouro: string,
     complemento: string    
+    bairro: string,    
+    localidade: string,
+    uf: string,
+    numero: string
 }
-
+/*
 export interface Estado {
     id: number;
     nome: string;
     sigla: string;
 }
-
+*/
 export interface Usuario {
     email: string,
     senha: string

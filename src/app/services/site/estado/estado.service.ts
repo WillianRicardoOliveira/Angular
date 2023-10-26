@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, shareReplay } from 'rxjs';
-import { Estado } from '@/interfaces/interfaces';
 import { BaseService } from '@services/base/base.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EstadoService {
-
+/*
   private cache$?: Observable<Estado[]>;
 
   constructor(private service: BaseService) {}
@@ -24,5 +23,5 @@ export class EstadoService {
   private requestEstados(): Observable<Estado[]> {
     return this.service.listar("estado")
   }
-  
+  */
 }

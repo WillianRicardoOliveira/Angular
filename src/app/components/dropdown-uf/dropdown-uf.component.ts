@@ -1,4 +1,4 @@
-import { Estado } from '@/interfaces/interfaces';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { EstadoService } from '@services/site/estado/estado.service';
@@ -15,6 +15,8 @@ export class DropdownUfComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() control!: FormControl;
 
+  ngOnInit(): void {}
+  /*
   estados: Estado[] = [];
 
   filteredOptions$?: Observable<Estado[]>;
@@ -51,5 +53,5 @@ export class DropdownUfComponent implements OnInit {
   displayFn(estado: Estado): string {
     return estado && estado.nome ? estado.nome : ""
   }
-
+*/
 }
