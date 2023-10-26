@@ -63,11 +63,6 @@ export class PerfilComponent implements OnInit {
     })
   }
 
-
-
-
-
-
   atualizar() {
     const dadosAtualizados = {
       id: this.id,
@@ -77,13 +72,13 @@ export class PerfilComponent implements OnInit {
       cpf: this.form?.value.cpf,
       telefone: this.form?.value.telefone,
       
-      cep: this.form?.value.endereco.cep,
-      logradouro: this.form?.value.endereco.logradouro,
-      complemento: this.form?.value.endereco.complemento,
-      bairro: this.form?.value.endereco.bairro,
-      localidade: this.form?.value.endereco.localidade,
-      uf: this.form?.value.endereco.uf,
-      numero: this.form?.value.endereco.numero
+      cep: this.form?.value.cep,
+      logradouro: this.form?.value.logradouro,
+      complemento: this.form?.value.complemento,
+      bairro: this.form?.value.bairro,
+      localidade: this.form?.value.localidade,
+      uf: this.form?.value.uf,
+      numero: this.form?.value.numero
     }
 
     this.cadastroService.atualizar(dadosAtualizados).subscribe({
